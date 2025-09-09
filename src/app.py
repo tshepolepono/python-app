@@ -8,7 +8,7 @@ def details():
     return jsonify({
         'time' : datetime.now(),
         'hostname' : socket.gethostname(),
-        'message' : 'Sure sure Mtshepula!! Nice one'
+        'message' : 'Sure sure Mtshepula!! Nice one!'
     })
 
 
