@@ -18,8 +18,16 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
+        name: Checkout
+        uses: actions/checkout@v4
+      
+      - 
+        name: Set short SHA
+        run: echo "SHORT_SHA=${GITHUB_SHA::6}" >> $GITHUB_ENV
+        
+      -
         name: Build and push
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: tlepono/python-app:${{ github.sha }}
+          tags: tlepono/python-app:${{ env.SHORT_SHA }}
