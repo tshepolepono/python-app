@@ -39,14 +39,14 @@ jobs:
       -
         name: Install ArgoCD
         shell: bash
-        run:
+        run: |
          curl -ksSL -o argocd-linux-amd64 https://argocd-server.argocd/download/argocd-linux-amd64
          sudo chmod +x argocd
          sudo mv ./argocd /usr/loca/bin/argocd
       -
         name: ArgoCD App Sync
         shell: bash
-        run:
+        run: |
           argocd login argocd-server.argocd \
             --insecure \
             --grpc-web \
