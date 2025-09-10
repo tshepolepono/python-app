@@ -3,12 +3,14 @@ from datetime import datetime
 import socket
 app = Flask(__name__)
 
-@app.route("/api/v1/details")
-def details():
+@app.route("/api/v1/info")
+def info():
     return jsonify({
         'time' : datetime.now(),
         'hostname' : socket.gethostname(),
-        'message' : 'Sure, sure Mtshepula!! Nice one!! :)'
+        'message' : 'Sure, sure Mtshepula!! Nice one!! :)',
+        'deployed_on': 'kubernetes'
+
     })
 
 
