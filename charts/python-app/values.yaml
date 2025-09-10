@@ -2,7 +2,7 @@ replicaCount: 1
 image:
   repository: tlepono/python-app
   pullPolicy: IfNotPresent
-  tag: 2e796b
+  tag: 324d57
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
